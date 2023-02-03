@@ -17,5 +17,10 @@ public class Launcher {
 
 //        System.out.println(construct.findSmallestInt(new int[]{34,15,88,2}));
 
-    }
+//        System.out.println(Methods.fakeBin("56789231234 "));
+
+//        System.out.println(method.wordReversal("Hi Pogi !"));
+
+        System.out.println(method.specialCharacter("hello pogi ?"));
+   }
 }
