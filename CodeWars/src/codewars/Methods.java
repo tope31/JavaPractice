@@ -1,5 +1,6 @@
 package codewars;
 
+import javax.sound.midi.Soundbank;
 import java.awt.image.renderable.RenderableImage;
 
 public class Methods {
@@ -59,20 +60,40 @@ public class Methods {
         for (int index = strArr.length - 1; index >= 0; index--) {
             wordReverse += strArr[index] + " ";
 
-            for (int i = 0; i < strArr.length ; i++) {
+            for (int i = 0; i < strArr.length; i++) {
                 specialCharacterHolder = strArr[i] + " ";
             }
         }
         return wordReverse.trim() + " " + specialCharacterHolder;
     }
+
     //TODO bilee boi
     public static String specialCharacter(String str) {
-        String[] strArr = str.split("\\s");
-        String specialCharacter = "";
-        boolean checker =  Character.isLetterOrDigit(str.charAt(0));
-        for (int index = 0; index < strArr.length ; index++) {
-                specialCharacter += strArr[index] + " ";
+        String[] strArr = str.split("!|\\s");
+        String[] strArr2 = str.split("");
+        String words = "";
+        String specialChar = "";
+//        boolean checker =  Character.isLetterOrDigit(str.charAt(0));
+        for (int index = strArr.length - 1; index >= 0; index--) {
+            words += strArr[index] + " ";
         }
-        return specialCharacter;
+        for (int index = 0; index < strArr2.length; index++) {
+            specialChar = strArr2[index];
+        }
+        return words + specialChar;
+    }
+
+    public String maskify(String str) {
+        String mask = "";
+        String masker = "#";
+
+        if (str.length() <= 4) {
+            return str;
+        } else
+            for (int index = 0; index < str.length() - 4; index++) {
+                mask += masker;
+            }
+        mask += str.substring(str.length() - 4);
+        return mask;
     }
 }

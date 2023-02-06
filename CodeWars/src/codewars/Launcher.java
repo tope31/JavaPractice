@@ -21,6 +21,8 @@ public class Launcher {
 
 //        System.out.println(method.wordReversal("Hi Pogi !"));
 
-        System.out.println(method.specialCharacter("hello pogii ?"));
+//        System.out.println(method.specialCharacter("Persona 5 Royal!"));
+
+        System.out.println(method.maskify("444424"));
    }
 }
