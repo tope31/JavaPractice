@@ -1,7 +1,15 @@
 package codewars;
 
-import javax.sound.midi.Soundbank;
-import java.awt.image.renderable.RenderableImage;
+import org.w3c.dom.ranges.Range;
+
+import java.security.PublicKey;
+import java.security.cert.CertificateParsingException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.IntStream;
+
+import static java.util.stream.IntStream.rangeClosed;
 
 public class Methods {
 
@@ -83,7 +91,7 @@ public class Methods {
         return words + specialChar;
     }
 
-    public String maskify(String str) {
+    public String maskify2(String str) {
         String mask = "";
         String masker = "#";
 
@@ -95,5 +103,169 @@ public class Methods {
             }
         mask += str.substring(str.length() - 4);
         return mask;
+    }
+
+    public String maskify(String str) {
+        String mask = "";
+        String masker = "#";
+        if (str.length() <= 4) {
+            return str;
+        } else
+            for (int index = 0; index < str.length(); index++) {
+                if (index >= str.length() - 4) {
+                    mask += str.charAt(index);
+                } else {
+                    mask += masker;
+                }
+            }
+        return mask;
+    }
+
+    public String charAtPrac(String str) {
+        String temp = "";
+        for (int index = 0; index < str.length(); index++) {
+            if (str.charAt(index) == 'a' || str.charAt(index) == 'e' || str.charAt(index) == 'i' || str.charAt(index) == 'o' || str.charAt(index) == 'u') {
+                temp += Character.toUpperCase(str.charAt(index));
+            } else {
+                temp += str.charAt(index);
+            }
+        }
+        return temp;
+    }
+
+    public String romanNumerals(String str) {
+        String temp = "";
+        String[] ones = {"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"};
+
+        for (int index = 0; index < str.length(); index++) {
+            temp = ones[index];
+        }
+
+        return temp;
+    }
+
+    public String removeFirstLastLetter(String str) {
+        String temp = "";
+
+        for (int index = 1; index < str.length() - 1; index++) {
+            temp += str.charAt(index);
+        }
+
+        return temp;
+    }
+
+    public static int[] between(int a, int b) {
+//        List<Integer> between = new ArrayList<>();
+//
+//        for (int index = a; index <= b; index++) {
+//            between.add(index);
+//        }
+//
+//        return between.stream().mapToInt(i->i).toArray();
+        return rangeClosed(a, b).toArray();
+    }
+
+    public static void drawRightTriangle(int row) {
+        for (int index = 1; index <= row; index++) {
+            for (int j = 1; j < index; j++) {
+                System.out.print(index);
+            }
+            System.out.println(index);
+        }
+    }
+
+    public static void drawAscendingTriangle(int height) {
+        int count = 0;
+        for (int index = 1; index <= height; index++) {
+            for (int j = 0; j < index; j++) {
+                count++;
+                System.out.print(count);
+            }
+            System.out.println();
+        }
+    }
+
+    public static void drawRepeatingTriangle(int height) {
+        int count = 0;
+        for (int index = 1; index <= height; index++) {
+            for (int j = 0; j < index; j++) {
+                count++;
+                System.out.print(count);
+            }
+            count = 0;
+            System.out.println();
+        }
+    }
+
+    public static int goals(int laLigaGoals, int copaDelReyGoals, int championsLeagueGoals) {
+        // your code here
+        int totalGoals = 0;
+
+        totalGoals = laLigaGoals + copaDelReyGoals + championsLeagueGoals;
+
+        return totalGoals;
+    }
+
+    public static int[] pipeFix(int[] numbers) {
+        // Fix the pipes!
+        List<Integer> integerList = new ArrayList<>();
+        int[] temp = {};
+        int count = 0;
+        for (int index = 0; index < numbers.length; index++) {
+            integerList.add(numbers[index]);
+//            System.out.print(numbers[index] + " ");
+        }
+        Object[] objects = integerList.toArray();
+        return temp;
+    }
+
+    public static void listExample() {
+        List<String> integerList = new ArrayList<>();
+        integerList.add("hey");
+        integerList.add("jorge");
+
+        System.out.println(integerList);
+    }
+
+    public static int findDifference(final int[] firstCuboid, final int[] secondCuboid) {
+        //your code here !!
+        int temp = 0;
+
+        for (int index = 0; index < firstCuboid.length; index++) {
+            temp *= index;
+        }
+
+        return temp;
+    }
+
+//    public void nestedFor(int num) {
+//        for (int index = 0; index < num; index++) {
+//            System.out.println("test");
+//            for (int j = 0; j < num; j++) {
+//                System.out.println(j);
+//            }
+//        }
+//    }
+
+//    public void nestedFor(int num) {
+//        for (int index = 1; index <= num; index++) {
+//            System.out.print(index);
+//            for (int j = 1; j < index; j++) {
+//                System.out.print(index);
+//            }
+//            System.out.println("");
+//        }
+
+    public void nestedFor(int num) {
+        int count = 0;
+        for (int index = 1; index <= num; index++) {
+            System.out.print(count);
+            for (int j = 0; j < index; j++) {
+                count++;
+                System.out.print(count);
+            }
+//            count = 0;
+            System.out.println("");
+        }
     }
 }
