@@ -4,9 +4,7 @@ import org.w3c.dom.ranges.Range;
 
 import java.security.PublicKey;
 import java.security.cert.CertificateParsingException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.IntStream;
 
 import static java.util.stream.IntStream.rangeClosed;
@@ -267,5 +265,114 @@ public class Methods {
 //            count = 0;
             System.out.println("");
         }
+    }
+
+    public static String countingSheep(int num) {
+        //Add your code here
+        String count = "";
+        if (num == 0) {
+            return "";
+        }
+        for (int index = 1; index <= num; index++) {
+            count += index + "sheep...";
+        }
+        return count;
+    }
+
+    public static String greet(String name) {
+        String text = "Hello, " + name + " how are you doing today?";
+        // Your code here
+        return text;
+    }
+
+    public static String shortcut(String input) {
+        return input.replaceAll("[aeiou]", "");
+    }
+
+    public static String correct(String string) {
+        String temp = string.replaceAll("5", "S");
+        String temp1 = temp.replaceAll("0", "O");
+        String temp2 = temp1.replaceAll("1", "I");
+
+        return temp2;
+    }
+
+    public static String switchItUp(int number) {
+        switch (number) {
+            case 0:
+                return "Zero";
+            case 1:
+                return "One";
+            case 2:
+                return "Two";
+            case 3:
+                return "Three";
+            case 4:
+                return "Four";
+            case 5:
+                return "Five";
+            case 6:
+                return "Six";
+            case 7:
+                return "Seven";
+            case 8:
+                return "Eight";
+            case 9:
+                return "Nine";
+            case 10:
+                return "Ten";
+        }
+        return "";
+    }
+
+    public static String reverseLetter(final String str) {
+        String[] reverse = str.split("");
+        String temp = "";
+        for (int index = str.length() - 1; index >= 0; index--) {
+            temp += reverse[index];
+        }
+        return temp.replaceAll("[^A-Za-z0-9]", ""); //coding and coding..
+    }
+
+    public static int howOld(final String herOld) {
+        char c = herOld.charAt(0);
+        String string = Character.toString(c);
+        int age = Integer.parseInt(string);
+
+
+        //your code here, return correct age as int ; )
+        return age;
+    }
+
+    public static int findShort(String s) {
+        String[] temp = s.split("\\s");
+        int tempNum = 0;
+        for (int index = 0; index < temp.length; index++) {
+            if (tempNum == 0 || tempNum > temp[index].length()) {
+                tempNum = temp[index].length();
+            }
+        }
+        return tempNum;
+    }
+
+    public static String updateLight(String current) {
+        if (current.equals("green")) {
+            return "yellow";
+        } else if (current.equals("yellow")) {
+            return "red";
+        } else if (current.equals("red")) {
+            return "green";
+        } else {
+            return "not a valid traffic light color";
+        }
+    }
+
+    public static String abbrevName(String name) {
+        String[] arrName = name.split(" ");
+        String temp = "";
+        for (int index = 0; index < arrName.length; index++) {
+            temp += arrName[index].charAt(0) + ".";
+        }
+        return temp.toUpperCase().substring(0, 3);
     }
 }

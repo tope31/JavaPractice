@@ -1,6 +1,7 @@
 package codewars;
 
 import java.util.Arrays;
+import java.util.concurrent.CountDownLatch;
 
 public class Launcher {
     public static void main(String[] args) {
@@ -45,12 +46,32 @@ public class Launcher {
 
 //        System.out.println(method.goals(5,10,2));
 
-        method.pipeFix(new int[]{1,3,5,6,7,8});
+//        method.pipeFix(new int[]{1,3,5,6,7,8});
 
 //         method.listExample();
 
-        method.findDifference(new int[]{3,2,5},new int[]{1,4,4});
+//        method.findDifference(new int[]{3,2,5},new int[]{1,4,4});
 
-        method.nestedFor(5);
+//        method.nestedFor(5);
+
+//        System.out.println(method.countingSheep(3));
+
+//        System.out.println(method.greet("Ryan"));
+
+//        System.out.println(method.shortcut("hello"));
+
+//        System.out.println(method.correct("J. R. R. T0LK1EN - THE L0RD 0F THE R1NG5"));
+
+//        System.out.println(method.switchItUp(5));
+
+//        System.out.println(method.reverseLetter("krishan!!!"));
+
+//        System.out.println(method.howOld("5 years old"));
+
+//        System.out.println(method.findShort("bitcoin take over the world maybe who knows perhaps"));
+
+//        System.out.println(method.updateLight("asdasd"));
+
+//        System.out.println(method.abbrevName("Pierce Boachard"));
     }
 }
