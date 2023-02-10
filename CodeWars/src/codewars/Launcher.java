@@ -73,5 +73,7 @@ public class Launcher {
 //        System.out.println(method.updateLight("asdasd"));
 
 //        System.out.println(method.abbrevName("Pierce Boachard"));
+
+        System.out.println(method.replace("AEOIOASU!"));
     }
 }

@@ -375,4 +375,9 @@ public class Methods {
         }
         return temp.toUpperCase().substring(0, 3);
     }
+    public static String replace(final String s) {
+        String temp = "";
+        temp = s.replaceAll("[aeiouAEIOU]","!");
+        return temp; //coding and coding....
+    }
 }
